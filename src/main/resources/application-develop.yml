@@ -9,16 +9,16 @@ server:
 spring:
   # DataSourceProperties
   datasource:
-    driver-class-name=com: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/myCommunity(数据库名)?characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong
-    username: 用户名
-    password: 密码
+    url: jdbc:mysql://localhost:3306/myCommunity?characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong
+    username: root
+    password: 123456
 #    默认数据源
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       maximum-pool-size: 15
       minimum-idle: 5
       idle-timeout: 2000
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   # ThymeleafProperties
   thymeleaf:
@@ -28,10 +28,10 @@ spring:
   mail:
     host: smtp.qq.com
     port: 465
-    username: xxxxxx@qq.com
-    password: xxxxxx
+    username: 1580779474@qq.com
+    password: cxy965422036@
     protocol: smtps
-    properties.mail.smtp.ssl.enable: true
+#    properties.mail.smtp.ssl.enable: true
 
   # RedisProperties
   redis:
@@ -52,8 +52,9 @@ spring:
         max-idle: 10
         min-idle: 0
         max-active: 10
+    password: cxy123
 
-# ElasticsearchProperties
+  # ElasticsearchProperties
   data:
     elasticsearch:
       cluster-name:
@@ -73,20 +74,24 @@ mybatis:
 # 配置发送邮件时的域名
 domain: http://127.0.0.1:8080
 # 上传头像的域名
-upload: g:/work/data/upload(存放头像的本地地址)
+upload: d:/work/data/upload
+#  (存放头像的本地地址)
 
 
 # qiniu
 qiniu:
   key:
     access:
+#    F3YZT2Trmzajh5PUit2idH53PyL5BvxnsWCgAqZx
     # 文件加密秘钥
     secret:
+#    k6_04sEnQwxzD1Sxpp0ZrsLe9uMv5uw5AtdQL8Vc
 
   bucket:
     header:
       # 空间名字
-      name: mycommunity-header(自定义)
+      name: mycommunity-header
+#      (自定义)
       # 空间域名 有效期30天
       url: http://pxixdvvsz.bkt.clouddn.com
 
